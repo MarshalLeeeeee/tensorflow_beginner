@@ -5,14 +5,14 @@ import matplotlib.pyplot as plt
 
 # the path to save the file
 # you should modify here to run the program on yout own platform
-train_path = 'instruction/mnist_train/'
-test_path = 'instruction/mnist_test/'
+train_path = '/home/marshallee/Documents/mnist/instruction/mnist_train/'
+test_path = '/home/marshallee/Documents/mnist/instruction/mnist_test/'
 
-def numpyFile_load(path,data_num = 60000, fig_w = 45,mode = 'train'):
+def numpyFile_load(path,data_num = 60000, fig_w = 24,mode = 'train'):
 	#data = np.fromfile(path+"mnist_"+mode+"_data",dtype=np.uint8).astype(np.float32)
-	data = np.load(path+mode+'-latnet-25d.npy')
+	data = np.load(path+mode+'-latent-2d.npy')
 	label = np.fromfile(path+"mnist_"+mode+"_label",dtype=np.uint8)
-	data = data.reshape(data_num,fig_w*fig_w)
+	#data = data.reshape(data_num,fig_w*fig_w)
 	return (data,label)
 
 if __name__ == '__main__':

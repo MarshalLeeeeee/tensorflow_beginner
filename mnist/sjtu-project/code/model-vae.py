@@ -106,7 +106,7 @@ if __name__ == '__main__':
     train_num = train_data.shape[0]
     test_num = test_data.shape[0]
     d = train_data.shape[1]
-    d_z = 25
+    d_z = 2
     n_hidden = 500
     epochs = 100
     batch = 100
@@ -153,7 +153,7 @@ if __name__ == '__main__':
         plt.show()
         
         # save the latent space to npy file
-        # np.save('train-latent.npy',train_z)
-        # np.save('test-latnet.npy',test_z)
+        np.save('train-latent.npy',train_z)
+        np.save('test-latnet.npy',test_z)
         print('shape of train data mapping to latent space: ', train_z.shape)
         print('shape of test data mapping to latent space: ', test_z.shape)
