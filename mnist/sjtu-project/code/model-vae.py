@@ -76,6 +76,7 @@ def vae(X,X_target,keep_prob,layer1=1024,layer2=128,layer3=20,d=480):
     miu, Sigma = encoder(X,keep_prob,d,layer1,layer2,layer3)
 
     # generate the noise following the Gaussian distribution
+    # tf.random_normal is a constant, which is not trainable
     z = miu + Sigma * tf.random_normal(tf.shape(miu), 0, 1, dtype=tf.float32)
 
     # get the reconstructed data through decode
